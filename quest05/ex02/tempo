@@ -1,0 +1,5 @@
+find / type f -name *.sh -print | sed -e 's/\.sh$//' | xargs -n 1 basename
+
+find . -name *.sh -exec sh -c 'echo "$(basename {} .sh)"' \;
+
+find . -name "*.sh" -exec sh -c 'echo "$(basename {} .sh)"' \;
